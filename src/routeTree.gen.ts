@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PlaygroundIndexRouteImport } from './routes/playground/index'
+import { Route as PlaygroundModelIdRouteImport } from './routes/playground/$modelId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlaygroundIndexRoute = PlaygroundIndexRouteImport.update({
+  id: '/playground/',
+  path: '/playground/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaygroundModelIdRoute = PlaygroundModelIdRouteImport.update({
+  id: '/playground/$modelId',
+  path: '/playground/$modelId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/playground/$modelId': typeof PlaygroundModelIdRoute
+  '/playground': typeof PlaygroundIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/playground/$modelId': typeof PlaygroundModelIdRoute
+  '/playground': typeof PlaygroundIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/playground/$modelId': typeof PlaygroundModelIdRoute
+  '/playground/': typeof PlaygroundIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/playground/$modelId' | '/playground'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/playground/$modelId' | '/playground'
+  id: '__root__' | '/' | '/playground/$modelId' | '/playground/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PlaygroundModelIdRoute: typeof PlaygroundModelIdRoute
+  PlaygroundIndexRoute: typeof PlaygroundIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/playground/': {
+      id: '/playground/'
+      path: '/playground'
+      fullPath: '/playground'
+      preLoaderRoute: typeof PlaygroundIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playground/$modelId': {
+      id: '/playground/$modelId'
+      path: '/playground/$modelId'
+      fullPath: '/playground/$modelId'
+      preLoaderRoute: typeof PlaygroundModelIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PlaygroundModelIdRoute: PlaygroundModelIdRoute,
+  PlaygroundIndexRoute: PlaygroundIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

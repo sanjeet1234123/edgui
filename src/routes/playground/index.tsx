@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { models } from '../models/models'
+import { models } from '../../models/models'
 
-export const Route = createFileRoute('/')({
-  component: Home,
+export const Route = createFileRoute('/playground/')({
+  component: PlaygroundList,
 })
 
-function Home() {
+function PlaygroundList() {
   return (
     <div className="max-w-2xl mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Model Playground Platform</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Choose a Model Playground</h1>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         {models.map(model => (
           <div key={model.id} className="rounded-lg shadow-md border p-6 bg-white flex flex-col justify-between">
@@ -27,4 +27,4 @@ function Home() {
       </div>
     </div>
   )
-}
+} 
