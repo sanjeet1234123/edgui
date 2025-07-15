@@ -1,0 +1,122 @@
+/* Workspace Header */
+
+.actionIcon {
+  border: 1px solid #e4e4e7;
+  border-radius: var(--mantine-radius-md);
+  color:var(--clr-black)
+}
+
+.popoverText {
+  font-size: var(--mantine-font-size-md);
+  font-weight: 500;
+  color: var(--mantine-color-black);
+  padding: 6px 16px;
+  border-radius: var(--mantine-radius-md);
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  &:hover {
+    background-color: var(--mantine-color-gray-1);
+  }
+  &:active {
+    transform: scale(0.98);
+    background-color: var(--mantine-color-gray-2);
+  }
+}
+
+.segmentedControlLabel {
+  padding: 0.5rem 3rem;
+}
+
+@media (max-width: 1024px) {
+  .segmentedControlLabel {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .segmentedControlRoot {
+    width: 100%;
+  }
+}
+
+/* Members */
+
+.thead {
+  background-color: var(--clr-workspace-table-header);
+  white-space: nowrap;
+}
+
+.memberDescription {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.memberName {
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.badgeAdmin,
+.badgeEnv {
+  background-color: #f3f4f6;
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+}
+
+.badgeOwner {
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  background-color: var(--clr-primary);
+}
+
+.badge {
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  color:var(--clr-black)
+}
+
+.memberData {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+/* Invite Workspace Members */
+
+.label {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: #344054;
+  margin-bottom: 8px;
+}
+
+.wrapper {
+  border-radius: 8px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #465ff166;
+}
+
+.input,
+.innerInput {
+  font-size: var(--size-base);
+  font-weight: 400;
+  &::placeholder {
+    color: #667085;
+  }
+}
+
+.root:focus-within .input {
+  border-color: #283ab6;
+}
+
+.error {
+  color: var(--mantine-color-error);
+  font-size: var(--size-sm);
+  font-weight: 500;
+}

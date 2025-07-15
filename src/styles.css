@@ -1,15 +1,433 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-body {
-  @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+@import 'tailwindcss';
+
+:root {
+  /* colors */
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+
+  --clr-primary: #1b3382;
+  --clr-secondary: #536dfe;
+
+  /* Notification colors */
+  --clr-notification-success: #37b24d;
+  --clr-notification-warning: #fcc419;
+  --clr-notification-error: #f03e3e;
+
+  /* Layout colors */
+  --clr-header-bg: var(--mantine-color-white);
+  --clr-navbar-bg: #1b3382;
+  --clr-navbar-active: #536dfe;
+  --clr-navbar-hover: #ffffff60;
+  --clr-add-new-bg: var(--mantine-color-white);
+  --clr-main-bg: var(--mantine-color-white);
+
+  /* Add new modal colors */
+  --clr-add-new-modal-card-bg: #e8eaf6;
+  --clr-add-new-modal-card-hover: #4453b0;
+  --clr-add-new-modal-card-icon: #4453b0;
+  --clr-add-new-modal-card-description: var(--mantine-color-gray-6);
+
+  --clr-link: #001f63;
+  --clr-btn: #1b3382;
+  --clr-popover-dropdown-border: #cccfd3;
+
+  --clr-scrollbar: #b8b8b8;
+  --clr-scrollbar-hover: #828282;
+
+  /* Auth Container colors */
+  --clr-auth-container-bg: #ffffff;
+  --clr-auth-container-checkbox-label: #1a1a1a;
+  --clr-auth-container-forgot-label: #595959;
+  --clr-auth-container-account-text: #667085;
+  --clr-auth-container-link-text: #3949ab;
+  --clr-auth-container-example-url: #283ab6;
+  --clr-auth-container-example-url-bg: #ffffff;
+  --clr-auth-container-example-url-border: #283ab6;
+  --clr-auth-container-pinInput-border: #000000;
+  --clr-auth-container-pinInput-verification-code: #344054;
+  --clr-auth-container-account-text-strong: #536dfe;
+
+  /* Marketplace colors */
+  --clr-marketplace-title: #4453b0;
+  --clr-marketplace-card-bg: #ffffff;
+  --clr-marketplace-card-title: #213047;
+  --clr-marketplace-card-description: #474747ab;
+  --clr-marketplace-card-playground: #044395;
+  --clr-model-types-bg: var(--mantine-color-gray-1);
+  --clr-model-types-label: var(--clr-black);
+  --clr-model-types-border: var(--mantine-color-gray-3);
+  --clr-marketplace-table-header-bg: var(--mantine-color-gray-2);
+  --clr-marketplace-filter-button: var(--mantine-color-gray-4);
+
+  /* Servers colors */
+  --clr-servers-card-bg: #ffffff;
+  --clr-servers-card-title: #213047;
+  --clr-servers-card-description: #474747ab;
+  --clr-server-details-description: var(--mantine-color-gray-9);
+  --clr-server-details-created: var(--mantine-color-gray-9);
+  --clr-server-details-github-link: #1b3382;
+  --clr-server-details-accordion-description: #1b3382;
+  --clr-server-details-accordion-br: var(--mantine-color-gray-3);
+  --clr-server-details-no-parameters: var(--mantine-color-gray-6);
+  --clr-server-details-segmentedControl: var(--mantine-color-gray-2);
+  --clr-clear-servers-brush-icon: #1b3382;
+
+  /* TextInput colors */
+  --clr-text-input-label: #344054;
+  --clr-text-input-border: #465ff166;
+  --clr-text-input-border-focus: #283ab6;
+  --clr-text-input-placeholder: #667085;
+
+  /* Add Cluster colors */
+  --clr-add-cluster-card-bg: #c0d9ff1a;
+  --clr-add-cluster-card-border: #3d4994;
+  --clr-add-cluster-card-title: #213047;
+  --clr-add-cluster-card-description: #474747ab;
+
+  /* Projects colors */
+  --clr-projects-card-icon: #0859fa;
+  --clr-projects-card-bg: #a1aefa1a;
+  --clr-projects-card-border: #a1aefa;
+  --clr-projects-card-title: #3b3f5c;
+  --clr-projects-card-description: #474747ab;
+  --clr-projects-card-status: #474747ab;
+
+  /* User Profile colors */
+  --clr-user-profile-email: var(--mantine-color-gray-6);
+  --clr-user-profile-workspace: #1b3382;
+  --clr-user-profile-project-text: #3b3f5c;
+  --clr-user-profile-project-value: var(--mantine-color-gray-6);
+
+  /* Server colors */
+  --clr-server-description: var(--mantine-color-dark-8);
+  --clr-server-created-at: var(--mantine-color-dark-3);
+
+  /* Chat Area colors */
+  --clr-chat-area-user-message-bg: #edeffe;
+
+  /* Notification Drawer colors */
+  --clr-notification-drawer-x-icon: var(--clr-black);
+  --clr-notification-drawer-cards-bg: #efeeff;
+  --clr-notification-drawer-cards-title: #2e2e2e;
+  --clr-notification-drawer-cards-desc: #5a5a5a;
+  --clr-notification-drawer-cards-time: #696969;
+  --clr-notification-drawer-mark-all-read: var(--clr-primary);
+  --clr-notification-drawer-card: #efeeff;
+  --clr-notification-drawer-card-marked-read: white;
+
+  /* Account Settings colors */
+  --clr-header-headings: var(--clr-primary);
+  --clr-header-labels: rgba(0, 0, 0, 0.8);
+  --clr-user-details-card-title: #4453b0;
+  --clr-tabs-tab-bg: #dcebff;
+  --clr-project-table-header: var(--mantine-color-gray-0);
+  --clr-project-createdat: #464f60;
+
+  /* Workspace colors */
+  --clr-workspace-card-title: #4453b0;
+  --clr-workspace-table-header: var(--mantine-color-gray-0);
+
+  /* Model Playground colors */
+  --clr-model-playground-electric-icon: #1b3382;
+  --clr-model-playground-switch: #1b3382;
+  --clr-model-playground-slider: var(--clr-primary);
+  --clr-model-playground-badge: #1b3382;
+  --clr-model-playground-slider-labels: var(--mantine-color-gray-7);
+  --clr-model-playground-vulnerability-text: var(--mantine-color-gray-7);
+  --clr-model-playground-vulnerability-label: var(--mantine-color-black);
+  --clr-model-playground-chat-header-configs: var(--mantine-color-gray-8);
+
+  /* Deployment colors */
+  --clr-deplyment-model-name: #213047;
+  --clr-deplyment-refresh-button: var(--clr-primary);
+  --clr-deployment-model-configs: #383838;
+
+  /* Add files colors */
+  --clr-add-file-label: var(--mantine-color-gray-9);
+
+  /* Micro text sizes */
+  --size-3xs: 0.375rem; /* 6px */
+  --size-2xs: 0.5rem; /* 8px */
+  --size-xs: 0.75rem; /* 12px */
+
+  /* Standard text sizes */
+  --size-sm: 0.875rem; /* 14px */
+  --size-base: 1rem; /* 16px */
+  --size-lg: 1.125rem; /* 18px */
+  --size-xl: 1.25rem; /* 20px */
+  --size-2xl: 1.5rem; /* 24px */
+  --size-3xl: 1.875rem; /* 30px */
+  --size-4xl: 2.25rem; /* 36px */
+  --size-5xl: 3rem; /* 48px */
+
+  /* Display/Header sizes */
+  --size-6xl: 3.75rem; /* 60px */
+  --size-7xl: 4.5rem; /* 72px */
+  --size-8xl: 6rem; /* 96px */
+  --size-9xl: 8rem; /* 128px */
+  --size-10xl: 10rem; /* 160px */
+  --size-11xl: 12rem; /* 192px */
+  --size-12xl: 14rem; /* 224px */
+  --size-13xl: 16rem; /* 256px */
+
+  /* Giant display sizes */
+  --size-14xl: 18rem; /* 288px */
+  --size-15xl: 20rem; /* 320px */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark-mode {
+  --clr-white: #000000;
+  --clr-black: #ffffff;
+
+  --clr-primary: #3a50b1;
+  --clr-secondary: #6c7dff;
+
+  /* Notification colors */
+  --clr-notification-success: #4fc971;
+  --clr-notification-warning: #ffd43b;
+  --clr-notification-error: #ff5c5c;
+
+  /* Layout colors */
+  --clr-header-bg: var(--mantine-color-dark-9);
+  --clr-navbar-bg: var(--mantine-color-dark-9);
+  --clr-navbar-active: #a1aefa;
+  --clr-navbar-hover: #ffffff33;
+  --clr-add-new-bg: var(--mantine-color-gray-2);
+  --clr-main-bg: var(--mantine-color-dark-8);
+
+  /* Add new modal colors */
+  --clr-add-new-modal-card-bg: #a1aefa1a;
+  --clr-add-new-modal-card-hover: #a1aefa;
+  --clr-add-new-modal-card-icon: #a1aefa;
+  --clr-add-new-modal-card-description: var(--mantine-color-gray-5);
+
+  --clr-link: #ffffff;
+  --clr-btn: #3a50b1;
+  --clr-popover-dropdown-border: var(--mantine-color-gray-7);
+
+  --clr-scrollbar: #5a5a5a;
+  --clr-scrollbar-hover: #7a7a7a;
+
+  /* Auth Container colors */
+  --clr-auth-container-bg: var(--mantine-color-dark-8);
+  --clr-auth-container-checkbox-label: var(--mantine-color-dark-1);
+  --clr-auth-container-forgot-label: var(--mantine-color-dark-1);
+  --clr-auth-container-account-text: var(--mantine-color-dark-1);
+  --clr-auth-container-link-text: #a1aefa;
+  --clr-auth-container-example-url: var(--mantine-color-dark-0);
+  --clr-auth-container-example-url-bg: var(--mantine-color-dark-6);
+  --clr-auth-container-example-url-border: #a1aefa;
+  --clr-auth-container-pinInput-border: var(--mantine-color-dark-3);
+  --clr-auth-container-pinInput-verification-code: var(--mantine-color-dark-1);
+  --clr-auth-container-account-text-strong: #a1aefa;
+
+  /* Marketplace colors */
+  --clr-marketplace-title: #a1aefa;
+  --clr-marketplace-card-bg: #a1aefa1a;
+  --clr-marketplace-card-title: var(--mantine-color-gray-1);
+  --clr-marketplace-card-description: var(--mantine-color-gray-4);
+  --clr-marketplace-card-playground: var(--mantine-color-indigo-3);
+  --clr-model-types-bg: var(--mantine-color-gray-9);
+  --clr-model-types-label: var(--mantine-color-gray-1);
+  --clr-model-types-border: var(--mantine-color-gray-8);
+  --clr-marketplace-table-header-bg: var(--mantine-color-gray-9);
+  --clr-marketplace-filter-button: var(--mantine-color-gray-8);
+
+  /* Servers colors */
+  --clr-servers-card-bg: #a1aefa1a;
+  --clr-servers-card-title: var(--mantine-color-gray-1);
+  --clr-servers-card-description: var(--mantine-color-gray-4);
+  --clr-server-details-description: var(--mantine-color-gray-4);
+  --clr-server-details-created: var(--mantine-color-gray-4);
+  --clr-server-details-github-link: #a1aefa;
+  --clr-server-details-accordion-description: #a1aefa;
+  --clr-server-details-accordion-br: var(--mantine-color-dark-4);
+  --clr-server-details-no-parameters: var(--mantine-color-gray-3);
+  --clr-server-details-segmentedControl: var(--mantine-color-dark-6);
+  --clr-clear-servers-brush-icon: #a1aefa;
+
+  /* TextInput colors */
+  --clr-text-input-label: var(--mantine-color-gray-1);
+  --clr-text-input-border: var(--mantine-color-gray-6);
+  --clr-text-input-border-focus: var(--mantine-color-indigo-3);
+  --clr-text-input-placeholder: var(--mantine-color-gray-4);
+
+  /* Add Cluster colors */
+  --clr-add-cluster-card-bg: #a1aefa1a;
+  --clr-add-cluster-card-border: #a1aefa;
+  --clr-add-cluster-card-title: var(--mantine-color-gray-1);
+  --clr-add-cluster-card-description: var(--mantine-color-gray-4);
+
+  /* Projects colors */
+  --clr-projects-card-icon: #a1aefa;
+  --clr-projects-card-bg: #a1aefa1a;
+  --clr-projects-card-border: #a1aefa;
+  --clr-projects-card-title: var(--mantine-color-gray-1);
+  --clr-projects-card-description: var(--mantine-color-gray-4);
+  --clr-projects-card-status: var(--mantine-color-gray-6);
+
+  /* User Profile colors */
+  --clr-user-profile-email: var(--mantine-color-gray-5);
+  --clr-user-profile-workspace: #a1aefa;
+  --clr-user-profile-project-text: var(--mantine-color-gray-1);
+  --clr-user-profile-project-value: var(--mantine-color-gray-5);
+
+  /* Server colors */
+  --clr-server-description: var(--mantine-color-gray-4);
+  --clr-server-created-at: var(--mantine-color-gray-4);
+
+  /* Chat Area colors */
+  --clr-chat-area-user-message-bg: #a1aefa;
+
+  /* Notification Drawer colors */
+  --clr-notification-drawer-x-icon: white;
+  --clr-notification-drawer-cards-title: white;
+  --clr-notification-drawer-cards-desc: white;
+  --clr-notification-drawer-cards-time: var(--mantine-color-dark-1);
+  --clr-notification-drawer-mark-all-read: #a1aefa;
+  --clr-notification-drawer-card: var(--mantine-color-dark-4);
+  --clr-notification-drawer-card-marked-read: var(--mantine-color-dark-10);
+
+  /* Account Settings colors */
+  --clr-header-headings: #a1aefa;
+  --clr-header-labels: var(--mantine-color-gray-4);
+  --clr-user-details-card-title: #a1aefa;
+  --clr-tabs-title: var(--clr-black);
+  --clr-tabs-tab-bg: #a1aefa;
+  --clr-project-table-header: var(--mantine-color-dark-8);
+  --clr-project-createdat: var(--mantine-color-gray-4);
+
+  /* Workspace colors */
+  --clr-workspace-card-title: #a1aefa;
+  --clr-workspace-table-header: var(--mantine-color-dark-8);
+
+  /* Model Playground colors */
+  --clr-model-playground-electric-icon: var(--clr-secondary);
+  --clr-model-playground-switch: var(--clr-secondary);
+  --clr-model-playground-slider: var(--clr-secondary);
+  --clr-model-playground-badge: #a1aefa;
+  --clr-model-playground-slider-labels: var(--mantine-color-gray-5);
+  --clr-model-playground-vulnerability-text: var(--mantine-color-gray-5);
+  --clr-model-playground-vulnerability-label: var(--mantine-color-white);
+  --clr-model-playground-chat-header-configs: var(--mantine-color-gray-5);
+
+  /* Deployment colors */
+  --clr-deplyment-model-name: #a1aefa;
+  --clr-deplyment-refresh-button: var(--clr-secondary);
+  --clr-deployment-model-configs: var(--mantine-color-gray-5);
+
+  /* Add files colors */
+  --clr-add-file-label: var(--mantine-color-gray-3);
+  --clr-add-file-label-hovered: white;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+  position: relative;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+.markdown > * {
+  all: revert;
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: inline;
+  }
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.Title {
+  font-size: var(--size-3xl);
+  font-weight: 600;
+  color: var(--clr-black);
+}
+
+/* TextInput */
+.custom-label {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: var(--clr-text-input-label);
+  margin-bottom: 8px;
+}
+
+.custom-label strong,
+.custom-error {
+  font-weight: 500;
+  font-size: var(--size-sm);
+  color: var(--clr-notification-error);
+}
+
+.custom-input,
+.custom-innerInput {
+  border-color: var(--clr-text-input-border);
+  font-size: var(--size-base);
+  font-weight: 400;
+  &::placeholder {
+    color: var(--clr-text-input-placeholder);
+  }
+}
+
+.custom-root:focus-within .custom-input {
+  border-color: var(--clr-text-input-border-focus);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-scrollbar);
+  border-radius: 20px;
+  cursor: default;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--clr-scrollbar-hover);
 }

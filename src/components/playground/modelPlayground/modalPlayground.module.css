@@ -1,0 +1,60 @@
+/* Playground Model Vulnerability */
+
+.vulnerabilityTitle {
+  font-weight: 600;
+  font-size: var(--size-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.vulnerabilityText {
+  font-size: var(--size-base);
+  font-weight: 400;
+  color: var(--clr-model-playground-vulnerability-text);
+}
+
+.vulnerabilityText strong {
+  font-weight: 500;
+  color: var(--clr-model-playground-vulnerability-label);
+}
+
+.vulnerabilityControl,
+.vulnerabilityTitle,
+.vulnerabilityLabel {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Configuration Slider */
+
+.track {
+  background-color: #cce0ff; /* light blue for unfilled track */
+  border-radius: 10px;
+}
+
+.bar {
+  background-color: var(
+    --clr-model-playground-slider
+  ); /* dark blue for filled track */
+}
+
+.thumb {
+  background-color: white;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 8px rgba(27, 51, 130, 0.15);
+  }
+}
+
+.markLabel {
+  margin-top: 10px;
+  color: var(--clr-model-playground-slider-labels);
+  font-size: 0.85rem;
+}
+
+.mark {
+  display: none;
+}

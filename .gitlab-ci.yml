@@ -1,0 +1,42 @@
+stages:
+  - build
+  - push
+  - deploy
+
+variables:
+  HELM_CHART_DIR: "$CI_PROJECT_NAME-helm"
+  KUBE_NAMESPACE: "product-squad"
+
+build:
+  stage: build
+  script:
+    - echo "$HARBOR_URL/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_PIPELINE_ID" | xargs -I {} docker build -t {} .
+  only:
+    - develop
+  tags:
+   - stable
+
+push:
+  stage: push
+  script:
+    - docker push $HARBOR_URL/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_PIPELINE_ID
+  only:
+    - develop
+  tags:
+   - stable
+
+deploy:
+  stage: deploy
+  image:
+    name: bitnami/kubectl:latest
+  script:
+    # Determine if Helm release exists
+    - echo "Helm release $CI_PROJECT_NAME is getting installed ..."
+    # - helm upgrade --install nexastack-ai-frontend nexastack-ai-frontend-helm --namespace product-squad --set image.tag="$CI_PIPELINE_ID" --kubeconfig=$ITOPS_CLUSTER_NS_PRODUCT_SQUAD
+    - helm upgrade --install nexastack-ai-frontend ./nexastack-ai-frontend-helm/ --namespace product-squad --set image.tag="$CI_PIPELINE_ID" --kubeconfig=$STAGE_CLUSTER_NS_PRODUCT_SQUAD
+
+  tags:
+   - stable
+  only:
+    - develop
+

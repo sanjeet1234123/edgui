@@ -1,0 +1,50 @@
+.cardTitle {
+  font-size: var(--size-2xl);
+  font-weight: 600;
+  color: var(--clr-workspace-card-title);
+}
+
+.cardDescription {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.cardLabel,
+.memberEmail {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.cardInput,
+.memberName {
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.outlineButton {
+  border-color: #e4e4e7;
+  color:var(--clr-workspace-card-title)
+}
+
+.badgeAdmin,
+.badgeEnv {
+  background-color: #f3f4f6;
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+}
+
+.badgeOwner {
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  background-color: var(--clr-primary);
+}
+
+.badge {
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  color:var(--clr-black);
+}

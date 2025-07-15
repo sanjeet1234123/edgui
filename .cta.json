@@ -1,14 +1,15 @@
 {
-  "projectName": ".",
-  "mode": "file-router",
+  "framework": "react",
   "typescript": true,
+  "projectName": "nexa-tanstack-file-router",
+  "mode": "file-router",
   "tailwind": true,
   "packageManager": "npm",
+  "toolchain": "eslint+prettier",
+  "variableValues": {},
   "git": true,
   "version": 1,
-  "framework": "react-cra",
-  "chosenAddOns": [
-    "eslint",
+  "existingAddOns": [
     "tanstack-query"
   ]
 }

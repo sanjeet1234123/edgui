@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+}
+
+.checkboxLabel {
+  font-size: var(--size-sm);
+  color: var(--clr-auth-container-checkbox-label);
+}
+
+.accountText {
+  color: var(--clr-auth-container-account-text);
+  font-size: var(--size-sm);
+  font-weight: 400;
+  text-align: center;
+}
+
+.linkText {
+  color: var(--clr-auth-container-link-text);
+  font-size: var(--size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    width: 100%;
+  }
+}

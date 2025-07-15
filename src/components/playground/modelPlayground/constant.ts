@@ -1,0 +1,50 @@
+export const sliderConfigs = [
+  {
+    id: 'temperature',
+    label: 'Temperature',
+    stateKey: 'temperature', // Fixed spelling
+    min: 0,
+    max: 2,
+    step: 0.1,
+    marks: [
+      { value: 0, label: '0' },
+      { value: 0.4, label: '0.4' },
+      { value: 0.8, label: '0.8' },
+      { value: 1.2, label: '1.2' },
+      { value: 1.6, label: '1.6' },
+      { value: 2, label: '2' },
+    ],
+  },
+  {
+    id: 'top_p',
+    label: 'Top P',
+    stateKey: 'top_p',
+    min: 0,
+    max: 1,
+    step: 0.1,
+    marks: [
+      { value: 0, label: '0' },
+      { value: 0.2, label: '0.2' },
+      { value: 0.4, label: '0.4' },
+      { value: 0.6, label: '0.6' },
+      { value: 0.8, label: '0.8' },
+      { value: 1, label: '1' },
+    ],
+  },
+  {
+    id: 'output_length',
+    label: 'Token Limit',
+    stateKey: 'output_length',
+    min: 0,
+    max: 10000,
+    step: 50,
+    marks: [
+      { value: 0, label: '0' },
+      { value: 2000, label: '2000' },
+      { value: 4000, label: '4000' },
+      { value: 6000, label: '6000' },
+      { value: 8000, label: '8000' },
+      { value: 10000, label: '10000' },
+    ],
+  },
+]

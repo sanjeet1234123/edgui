@@ -1,0 +1,112 @@
+.cardTitle {
+  font-weight: 600;
+  color: var(--clr-user-details-card-title);
+}
+
+.cardDescription {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--mantine-radius-md);
+  color: var(--clr-projects-card-icon);
+}
+
+.cardLabel {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.badgeAdmin,
+.badgeEnv {
+  background-color: #f3f4f6;
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+}
+
+.badgeOwner {
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  background-color: var(--clr-primary);
+}
+
+.badge {
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  color: var(--color-zinc-500);
+}
+
+/* Profile Header Styles */
+
+.labels {
+  font-size: var(--size-md);
+  font-weight: 400;
+  color: var(--clr-header-labels);
+}
+
+.editProfileBtn {
+  color: var(--clr-header-labels);
+  width: max-content;
+}
+
+/* Tabs Styling */
+
+.tabSection {
+  padding-top: 4rem;
+}
+
+.list {
+  min-width: 200px;
+  flex-wrap: nowrap;
+}
+
+.tab {
+  font-size: var(--size-md);
+  color: var(--clr-tabs-title);
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 6px;
+}
+
+/* Selected tab: set text and icon color to black */
+.tab[data-active='true'] {
+  color: #000 !important;
+}
+.tab[data-active='true'] svg {
+  color: #000 !important;
+}
+
+.panel {
+  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Project Details Table Styling */
+
+.thead {
+  background-color: var(--clr-project-table-header);
+  white-space: nowrap;
+  font-size: var(--size-base);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .tab {
+    font-size: var(--size-sm);
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 433px) {
+  .tab {
+    font-size: var(--size-xs);
+    padding: 0.2rem 0.5rem;
+  }
+}

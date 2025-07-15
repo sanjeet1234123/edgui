@@ -1,0 +1,81 @@
+.notificationCard {
+  background-color: var(--clr-notification-drawer-cards-bg);
+  border-radius: 8px;
+  border: none;
+  padding: 12px 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  overflow: hidden;
+  max-height: 200px;
+  opacity: 1;
+}
+
+.removing {
+  transform: translate(100%, 0);
+  opacity: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.title {
+  font-weight: 600;
+  font-size: var(--size-base);
+  transition: all 0.3s ease;
+}
+
+.desc {
+  font-size: var(--size-xs);
+  transition: all 0.3s ease;
+}
+
+.time {
+  font-size: var(--size-xs);
+}
+
+.contentWrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Adjustments for the icon container */
+.iconContainer {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  opacity: 0;
+}
+
+.iconContainerVisible {
+  width: 30px; /* Adjust based on icon size + margins */
+  opacity: 1;
+}
+
+/* Style for the action icon */
+.actionIcon {
+  background-color: black;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  color: white;
+}
+
+.actionIconVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Content shifting */
+.contentStack {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+  flex-grow: 1;
+}

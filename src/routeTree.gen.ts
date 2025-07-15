@@ -9,58 +9,417 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as ProjectOnboardingRouteImport } from './routes/project-onboarding'
+import { Route as PlatformSetupRouteImport } from './routes/platform-setup'
+import { Route as MemberSignupRouteImport } from './routes/member-signup'
+import { Route as MemberRegistrationRouteImport } from './routes/member-registration'
+import { Route as MemberLoginRouteImport } from './routes/member-login'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgotWorkspaceRouteImport } from './routes/forgot-workspace'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as ConfirmEmailRouteImport } from './routes/confirm-email'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PlaygroundIndexRouteImport } from './routes/playground/index'
-import { Route as PlaygroundModelIdRouteImport } from './routes/playground/$modelId'
+import { Route as AppWorkspaceRouteImport } from './routes/_app/workspace'
+import { Route as AppSettingsRouteImport } from './routes/_app/settings'
+import { Route as AppServersRouteImport } from './routes/_app/servers'
+import { Route as AppProjectsRouteImport } from './routes/_app/projects'
+import { Route as AppPlaygroundRouteImport } from './routes/_app/playground'
+import { Route as AppMarketplaceRouteImport } from './routes/_app/marketplace'
+import { Route as AppDeploymentsRouteImport } from './routes/_app/deployments'
+import { Route as AppDeploymentRouteImport } from './routes/_app/deployment'
+import { Route as AppClustersRouteImport } from './routes/_app/clusters'
+import { Route as AppAddClusterRouteImport } from './routes/_app/add-cluster'
+import { Route as AppAccountsRouteImport } from './routes/_app/accounts'
+import { Route as AppServerServerIdRouteImport } from './routes/_app/server.$serverId'
+import { Route as AppProjectProjectIdRouteImport } from './routes/_app/project.$projectId'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectOnboardingRoute = ProjectOnboardingRouteImport.update({
+  id: '/project-onboarding',
+  path: '/project-onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlatformSetupRoute = PlatformSetupRouteImport.update({
+  id: '/platform-setup',
+  path: '/platform-setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemberSignupRoute = MemberSignupRouteImport.update({
+  id: '/member-signup',
+  path: '/member-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemberRegistrationRoute = MemberRegistrationRouteImport.update({
+  id: '/member-registration',
+  path: '/member-registration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemberLoginRoute = MemberLoginRouteImport.update({
+  id: '/member-login',
+  path: '/member-login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotWorkspaceRoute = ForgotWorkspaceRouteImport.update({
+  id: '/forgot-workspace',
+  path: '/forgot-workspace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfirmEmailRoute = ConfirmEmailRouteImport.update({
+  id: '/confirm-email',
+  path: '/confirm-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlaygroundIndexRoute = PlaygroundIndexRouteImport.update({
-  id: '/playground/',
-  path: '/playground/',
-  getParentRoute: () => rootRouteImport,
+const AppWorkspaceRoute = AppWorkspaceRouteImport.update({
+  id: '/workspace',
+  path: '/workspace',
+  getParentRoute: () => AppRoute,
 } as any)
-const PlaygroundModelIdRoute = PlaygroundModelIdRouteImport.update({
-  id: '/playground/$modelId',
-  path: '/playground/$modelId',
-  getParentRoute: () => rootRouteImport,
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppServersRoute = AppServersRouteImport.update({
+  id: '/servers',
+  path: '/servers',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsRoute = AppProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPlaygroundRoute = AppPlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMarketplaceRoute = AppMarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDeploymentsRoute = AppDeploymentsRouteImport.update({
+  id: '/deployments',
+  path: '/deployments',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDeploymentRoute = AppDeploymentRouteImport.update({
+  id: '/deployment',
+  path: '/deployment',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppClustersRoute = AppClustersRouteImport.update({
+  id: '/clusters',
+  path: '/clusters',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAddClusterRoute = AppAddClusterRouteImport.update({
+  id: '/add-cluster',
+  path: '/add-cluster',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAccountsRoute = AppAccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppServerServerIdRoute = AppServerServerIdRouteImport.update({
+  id: '/server/$serverId',
+  path: '/server/$serverId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectProjectIdRoute = AppProjectProjectIdRouteImport.update({
+  id: '/project/$projectId',
+  path: '/project/$projectId',
+  getParentRoute: () => AppRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/playground/$modelId': typeof PlaygroundModelIdRoute
-  '/playground': typeof PlaygroundIndexRoute
+  '': typeof AppRouteWithChildren
+  '/confirm-email': typeof ConfirmEmailRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/forgot-workspace': typeof ForgotWorkspaceRoute
+  '/login': typeof LoginRoute
+  '/member-login': typeof MemberLoginRoute
+  '/member-registration': typeof MemberRegistrationRoute
+  '/member-signup': typeof MemberSignupRoute
+  '/platform-setup': typeof PlatformSetupRoute
+  '/project-onboarding': typeof ProjectOnboardingRoute
+  '/signup': typeof SignupRoute
+  '/accounts': typeof AppAccountsRoute
+  '/add-cluster': typeof AppAddClusterRoute
+  '/clusters': typeof AppClustersRoute
+  '/deployment': typeof AppDeploymentRoute
+  '/deployments': typeof AppDeploymentsRoute
+  '/marketplace': typeof AppMarketplaceRoute
+  '/playground': typeof AppPlaygroundRoute
+  '/projects': typeof AppProjectsRoute
+  '/servers': typeof AppServersRoute
+  '/settings': typeof AppSettingsRoute
+  '/workspace': typeof AppWorkspaceRoute
+  '/project/$projectId': typeof AppProjectProjectIdRoute
+  '/server/$serverId': typeof AppServerServerIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/playground/$modelId': typeof PlaygroundModelIdRoute
-  '/playground': typeof PlaygroundIndexRoute
+  '': typeof AppRouteWithChildren
+  '/confirm-email': typeof ConfirmEmailRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/forgot-workspace': typeof ForgotWorkspaceRoute
+  '/login': typeof LoginRoute
+  '/member-login': typeof MemberLoginRoute
+  '/member-registration': typeof MemberRegistrationRoute
+  '/member-signup': typeof MemberSignupRoute
+  '/platform-setup': typeof PlatformSetupRoute
+  '/project-onboarding': typeof ProjectOnboardingRoute
+  '/signup': typeof SignupRoute
+  '/accounts': typeof AppAccountsRoute
+  '/add-cluster': typeof AppAddClusterRoute
+  '/clusters': typeof AppClustersRoute
+  '/deployment': typeof AppDeploymentRoute
+  '/deployments': typeof AppDeploymentsRoute
+  '/marketplace': typeof AppMarketplaceRoute
+  '/playground': typeof AppPlaygroundRoute
+  '/projects': typeof AppProjectsRoute
+  '/servers': typeof AppServersRoute
+  '/settings': typeof AppSettingsRoute
+  '/workspace': typeof AppWorkspaceRoute
+  '/project/$projectId': typeof AppProjectProjectIdRoute
+  '/server/$serverId': typeof AppServerServerIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/playground/$modelId': typeof PlaygroundModelIdRoute
-  '/playground/': typeof PlaygroundIndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/confirm-email': typeof ConfirmEmailRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/forgot-workspace': typeof ForgotWorkspaceRoute
+  '/login': typeof LoginRoute
+  '/member-login': typeof MemberLoginRoute
+  '/member-registration': typeof MemberRegistrationRoute
+  '/member-signup': typeof MemberSignupRoute
+  '/platform-setup': typeof PlatformSetupRoute
+  '/project-onboarding': typeof ProjectOnboardingRoute
+  '/signup': typeof SignupRoute
+  '/_app/accounts': typeof AppAccountsRoute
+  '/_app/add-cluster': typeof AppAddClusterRoute
+  '/_app/clusters': typeof AppClustersRoute
+  '/_app/deployment': typeof AppDeploymentRoute
+  '/_app/deployments': typeof AppDeploymentsRoute
+  '/_app/marketplace': typeof AppMarketplaceRoute
+  '/_app/playground': typeof AppPlaygroundRoute
+  '/_app/projects': typeof AppProjectsRoute
+  '/_app/servers': typeof AppServersRoute
+  '/_app/settings': typeof AppSettingsRoute
+  '/_app/workspace': typeof AppWorkspaceRoute
+  '/_app/project/$projectId': typeof AppProjectProjectIdRoute
+  '/_app/server/$serverId': typeof AppServerServerIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/playground/$modelId' | '/playground'
+  fullPaths:
+    | '/'
+    | ''
+    | '/confirm-email'
+    | '/forgot-password'
+    | '/forgot-workspace'
+    | '/login'
+    | '/member-login'
+    | '/member-registration'
+    | '/member-signup'
+    | '/platform-setup'
+    | '/project-onboarding'
+    | '/signup'
+    | '/accounts'
+    | '/add-cluster'
+    | '/clusters'
+    | '/deployment'
+    | '/deployments'
+    | '/marketplace'
+    | '/playground'
+    | '/projects'
+    | '/servers'
+    | '/settings'
+    | '/workspace'
+    | '/project/$projectId'
+    | '/server/$serverId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/playground/$modelId' | '/playground'
-  id: '__root__' | '/' | '/playground/$modelId' | '/playground/'
+  to:
+    | '/'
+    | ''
+    | '/confirm-email'
+    | '/forgot-password'
+    | '/forgot-workspace'
+    | '/login'
+    | '/member-login'
+    | '/member-registration'
+    | '/member-signup'
+    | '/platform-setup'
+    | '/project-onboarding'
+    | '/signup'
+    | '/accounts'
+    | '/add-cluster'
+    | '/clusters'
+    | '/deployment'
+    | '/deployments'
+    | '/marketplace'
+    | '/playground'
+    | '/projects'
+    | '/servers'
+    | '/settings'
+    | '/workspace'
+    | '/project/$projectId'
+    | '/server/$serverId'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/confirm-email'
+    | '/forgot-password'
+    | '/forgot-workspace'
+    | '/login'
+    | '/member-login'
+    | '/member-registration'
+    | '/member-signup'
+    | '/platform-setup'
+    | '/project-onboarding'
+    | '/signup'
+    | '/_app/accounts'
+    | '/_app/add-cluster'
+    | '/_app/clusters'
+    | '/_app/deployment'
+    | '/_app/deployments'
+    | '/_app/marketplace'
+    | '/_app/playground'
+    | '/_app/projects'
+    | '/_app/servers'
+    | '/_app/settings'
+    | '/_app/workspace'
+    | '/_app/project/$projectId'
+    | '/_app/server/$serverId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PlaygroundModelIdRoute: typeof PlaygroundModelIdRoute
-  PlaygroundIndexRoute: typeof PlaygroundIndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  ConfirmEmailRoute: typeof ConfirmEmailRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  ForgotWorkspaceRoute: typeof ForgotWorkspaceRoute
+  LoginRoute: typeof LoginRoute
+  MemberLoginRoute: typeof MemberLoginRoute
+  MemberRegistrationRoute: typeof MemberRegistrationRoute
+  MemberSignupRoute: typeof MemberSignupRoute
+  PlatformSetupRoute: typeof PlatformSetupRoute
+  ProjectOnboardingRoute: typeof ProjectOnboardingRoute
+  SignupRoute: typeof SignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project-onboarding': {
+      id: '/project-onboarding'
+      path: '/project-onboarding'
+      fullPath: '/project-onboarding'
+      preLoaderRoute: typeof ProjectOnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/platform-setup': {
+      id: '/platform-setup'
+      path: '/platform-setup'
+      fullPath: '/platform-setup'
+      preLoaderRoute: typeof PlatformSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/member-signup': {
+      id: '/member-signup'
+      path: '/member-signup'
+      fullPath: '/member-signup'
+      preLoaderRoute: typeof MemberSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/member-registration': {
+      id: '/member-registration'
+      path: '/member-registration'
+      fullPath: '/member-registration'
+      preLoaderRoute: typeof MemberRegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/member-login': {
+      id: '/member-login'
+      path: '/member-login'
+      fullPath: '/member-login'
+      preLoaderRoute: typeof MemberLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-workspace': {
+      id: '/forgot-workspace'
+      path: '/forgot-workspace'
+      fullPath: '/forgot-workspace'
+      preLoaderRoute: typeof ForgotWorkspaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confirm-email': {
+      id: '/confirm-email'
+      path: '/confirm-email'
+      fullPath: '/confirm-email'
+      preLoaderRoute: typeof ConfirmEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -68,27 +427,147 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/playground/': {
-      id: '/playground/'
+    '/_app/workspace': {
+      id: '/_app/workspace'
+      path: '/workspace'
+      fullPath: '/workspace'
+      preLoaderRoute: typeof AppWorkspaceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/settings': {
+      id: '/_app/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/servers': {
+      id: '/_app/servers'
+      path: '/servers'
+      fullPath: '/servers'
+      preLoaderRoute: typeof AppServersRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects': {
+      id: '/_app/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof AppProjectsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/playground': {
+      id: '/_app/playground'
       path: '/playground'
       fullPath: '/playground'
-      preLoaderRoute: typeof PlaygroundIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AppPlaygroundRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/playground/$modelId': {
-      id: '/playground/$modelId'
-      path: '/playground/$modelId'
-      fullPath: '/playground/$modelId'
-      preLoaderRoute: typeof PlaygroundModelIdRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_app/marketplace': {
+      id: '/_app/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof AppMarketplaceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/deployments': {
+      id: '/_app/deployments'
+      path: '/deployments'
+      fullPath: '/deployments'
+      preLoaderRoute: typeof AppDeploymentsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/deployment': {
+      id: '/_app/deployment'
+      path: '/deployment'
+      fullPath: '/deployment'
+      preLoaderRoute: typeof AppDeploymentRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/clusters': {
+      id: '/_app/clusters'
+      path: '/clusters'
+      fullPath: '/clusters'
+      preLoaderRoute: typeof AppClustersRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/add-cluster': {
+      id: '/_app/add-cluster'
+      path: '/add-cluster'
+      fullPath: '/add-cluster'
+      preLoaderRoute: typeof AppAddClusterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/accounts': {
+      id: '/_app/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AppAccountsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/server/$serverId': {
+      id: '/_app/server/$serverId'
+      path: '/server/$serverId'
+      fullPath: '/server/$serverId'
+      preLoaderRoute: typeof AppServerServerIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/project/$projectId': {
+      id: '/_app/project/$projectId'
+      path: '/project/$projectId'
+      fullPath: '/project/$projectId'
+      preLoaderRoute: typeof AppProjectProjectIdRouteImport
+      parentRoute: typeof AppRoute
     }
   }
 }
 
+interface AppRouteChildren {
+  AppAccountsRoute: typeof AppAccountsRoute
+  AppAddClusterRoute: typeof AppAddClusterRoute
+  AppClustersRoute: typeof AppClustersRoute
+  AppDeploymentRoute: typeof AppDeploymentRoute
+  AppDeploymentsRoute: typeof AppDeploymentsRoute
+  AppMarketplaceRoute: typeof AppMarketplaceRoute
+  AppPlaygroundRoute: typeof AppPlaygroundRoute
+  AppProjectsRoute: typeof AppProjectsRoute
+  AppServersRoute: typeof AppServersRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppWorkspaceRoute: typeof AppWorkspaceRoute
+  AppProjectProjectIdRoute: typeof AppProjectProjectIdRoute
+  AppServerServerIdRoute: typeof AppServerServerIdRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAccountsRoute: AppAccountsRoute,
+  AppAddClusterRoute: AppAddClusterRoute,
+  AppClustersRoute: AppClustersRoute,
+  AppDeploymentRoute: AppDeploymentRoute,
+  AppDeploymentsRoute: AppDeploymentsRoute,
+  AppMarketplaceRoute: AppMarketplaceRoute,
+  AppPlaygroundRoute: AppPlaygroundRoute,
+  AppProjectsRoute: AppProjectsRoute,
+  AppServersRoute: AppServersRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppWorkspaceRoute: AppWorkspaceRoute,
+  AppProjectProjectIdRoute: AppProjectProjectIdRoute,
+  AppServerServerIdRoute: AppServerServerIdRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PlaygroundModelIdRoute: PlaygroundModelIdRoute,
-  PlaygroundIndexRoute: PlaygroundIndexRoute,
+  AppRoute: AppRouteWithChildren,
+  ConfirmEmailRoute: ConfirmEmailRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  ForgotWorkspaceRoute: ForgotWorkspaceRoute,
+  LoginRoute: LoginRoute,
+  MemberLoginRoute: MemberLoginRoute,
+  MemberRegistrationRoute: MemberRegistrationRoute,
+  MemberSignupRoute: MemberSignupRoute,
+  PlatformSetupRoute: PlatformSetupRoute,
+  ProjectOnboardingRoute: ProjectOnboardingRoute,
+  SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

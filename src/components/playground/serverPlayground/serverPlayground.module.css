@@ -1,0 +1,23 @@
+.chatAreaCard {
+  margin-left: 2.5rem;
+  height: 100%;
+  position: relative;
+}
+
+.SVGContainer {
+  position: absolute;
+  top: -1px;
+  right: -50px;
+}
+
+.threeDotButton {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.errorAlert {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+

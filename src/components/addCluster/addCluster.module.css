@@ -1,0 +1,17 @@
+/* Add Cluster Cards */
+
+.imageStyle {
+  width: 52px;
+  height: 52px;
+  color: var(--clr-add-cluster-card-title);
+}
+
+.cardStyle {
+  background-color: var(--clr-add-cluster-card-bg);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.selectedCard {
+  border-color: var(--clr-add-cluster-card-border);
+}

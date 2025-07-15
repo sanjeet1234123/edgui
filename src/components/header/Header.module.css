@@ -1,0 +1,12 @@
+.logo {
+  max-width: 150px;
+  width: 100%;
+}
+
+.agentSRE {
+  transition: all 0.3s ease;
+  &:hover {
+    text-decoration: underline;
+    color: var(--clr-secondary);
+  }
+}

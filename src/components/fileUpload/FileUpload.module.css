@@ -1,0 +1,36 @@
+strong {
+  color: #536dfe;
+  font-weight: 500;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.strongDisabled {
+  color: var(--mantine-color-gray-6);
+  cursor: not-allowed;
+  &:hover {
+    text-decoration: none;
+    cursor: not-allowed;
+  }
+}
+
+.fileUploadContainer {
+  border: 1px dashed var(--clr-primary);
+  border-radius: 8px;
+  padding: 4rem 2rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dragActive {
+  border: 2px dashed var(--clr-primary);
+  background-color: rgba(83, 109, 254, 0.05);
+}
+
+.fileUploadContainerDisabled {
+  border: 1px dashed var(--mantine-color-gray-4);
+  background-color: var(--mantine-color-gray-0);
+  cursor: not-allowed;
+}

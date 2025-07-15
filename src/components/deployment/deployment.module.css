@@ -1,0 +1,16 @@
+/* Clusters List */
+
+.clusterCard {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.modelConfigs {
+  text-align: left;
+  border-right: 1px solid #d2cccc;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}

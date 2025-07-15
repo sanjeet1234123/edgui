@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutAddition matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-position="bottom-right"
+    data-testid="react-query-devtools"
+  />
+</DocumentFragment>
+`;

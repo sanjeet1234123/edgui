@@ -1,0 +1,115 @@
+/* Chat Messages Style */
+
+.chatAreaUserMessage {
+  max-width: 90%;
+  align-self: flex-end;
+  word-break: break-word;
+  background-color: var(--clr-chat-area-user-message-bg);
+  color: var(--mantine-color-gray-9);
+}
+
+/* Bot message styling - remove dark background */
+.chatAreaBotMessage {
+  background-color: transparent !important;
+  color: var(--clr-black) !important;
+}
+
+.chatAreaBotMessage .markdown-body {
+  background-color: transparent !important;
+}
+
+/* Override markdown body background for bot messages */
+[data-theme='dark'] .chatAreaBotMessage .markdown-body {
+  background-color: transparent !important;
+}
+
+[data-theme='light'] .chatAreaBotMessage .markdown-body {
+  background-color: transparent !important;
+}
+
+/* Enhanced table styling for chat responses */
+.markdown-body table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.markdown-body table thead,
+.markdown-body table tbody {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--mantine-color-gray-3);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.markdown-body table th {
+  background-color: var(--mantine-color-gray-1);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.markdown-body table tr:nth-child(even) {
+  background-color: var(--mantine-color-gray-0);
+}
+
+.markdown-body table tr:hover {
+  background-color: var(--mantine-color-blue-0);
+}
+
+/* Dark theme table styling */
+[data-theme='dark'] .markdown-body table th {
+  background-color: var(--mantine-color-dark-6);
+}
+
+[data-theme='dark'] .markdown-body table tr:nth-child(even) {
+  background-color: var(--mantine-color-dark-7);
+}
+
+[data-theme='dark'] .markdown-body table tr:hover {
+  background-color: var(--mantine-color-dark-5);
+}
+
+[data-theme='dark'] .markdown-body table th,
+[data-theme='dark'] .markdown-body table td {
+  border-color: var(--mantine-color-dark-4);
+}
+
+/* Responsive table container */
+.table-container {
+  overflow-x: auto;
+  margin: 16px 0;
+  border-radius: 8px;
+  border: 1px solid var(--mantine-color-gray-3);
+}
+
+[data-theme='dark'] .table-container {
+  border-color: var(--mantine-color-dark-4);
+}
+
+/* Code blocks within tables */
+.markdown-body table code {
+  background-color: var(--mantine-color-gray-1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+[data-theme='dark'] .markdown-body table code {
+  background-color: var(--mantine-color-dark-6);
+}

@@ -1,0 +1,177 @@
+/* Marketplace Filters */
+
+/* Search Input Animation */
+.searchInput {
+  transition: all 0.4s ease;
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchInput:focus-within {
+  flex: 1.2;
+  min-width: 250px;
+}
+
+.toggleButtons {
+  flex: 1;
+  margin: '0 2px';
+  padding: '10px auto';
+}
+
+.selectedButton {
+  background-color: var(--clr-primary);
+  border: none;
+}
+
+.selectedButton .buttonLabel {
+  font-weight: 500;
+  color: white;
+}
+
+.unselectedButton {
+  background-color: var(--clr-model-types-bg) !important;
+  border: 1px solid var(--clr-model-types-border);
+}
+
+.unselectedButton .buttonLabel {
+  font-weight: 500;
+  color: var(--clr-model-types-label);
+}
+
+@media screen and (max-width: 968px) {
+  .toggleButtons {
+    flex: none;
+    width: 100px;
+  }
+}
+
+/* Segmented Control */
+
+.segmentedControlRoot {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Filtered Tags */
+
+.filterTagsRoot {
+  color: var(--mantine-color-gray-6);
+  border-color: var(--clr-primary);
+}
+
+.filterTagsLabel {
+  color: var(--clr-black);
+}
+
+.filterTagsSection {
+  color: var(--clr-black);
+}
+
+/* Filters Popover Button */
+.filtersButtonRoot {
+  border-color: var(--clr-marketplace-filter-button);
+  color: var(--clr-black);
+}
+
+.filtersButtonLabel {
+  color: var(--clr-black);
+}
+
+.filtersButtonSection {
+  color: var(--clr-black);
+}
+
+/* Marketplace Card */
+
+.modelCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--clr-marketplace-card-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.userCard {
+  background-color: var(--mantine-color-gray-2);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.cardIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.cardTitle {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: var(--size-lg);
+  color: var(--clr-marketplace-card-title);
+}
+
+.cardDescription {
+  font-size: var(--size-sm);
+  color: var(--clr-marketplace-card-description);
+}
+
+/* Marketplace Modal */
+
+.label {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: #344054;
+  margin-bottom: 8px;
+}
+
+.wrapper {
+  border-radius: 8px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #465ff166;
+}
+
+.input,
+.innerInput {
+  font-size: var(--size-base);
+  font-weight: 400;
+  &::placeholder {
+    color: #667085;
+  }
+}
+
+.root:focus-within .input {
+  border-color: #283ab6;
+}
+
+.filePreviewContainer {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 12px;
+  gap: 10px;
+}
+
+.filePreview {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+}
+
+/* Marketplace Table */
+
+.thead {
+  background-color: var(--clr-marketplace-table-header-bg);
+}

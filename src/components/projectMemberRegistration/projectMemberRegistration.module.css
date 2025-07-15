@@ -1,0 +1,73 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+}
+
+.label {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: #344054;
+  margin-bottom: 8px;
+}
+
+.wrapper {
+  border-radius: 8px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #465ff166;
+}
+
+.input,
+.innerInput {
+  font-size: var(--size-base);
+  font-weight: 400;
+  &::placeholder {
+    color: #667085;
+  }
+}
+
+.root:focus-within .input {
+  border-color: #283ab6;
+}
+
+.forgotPassword {
+  font-size: var(--size-sm);
+  color: #595959;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.error {
+  font-weight: 500;
+  font-size: var(--size-sm);
+  color: var(--mantine-color-error);
+}
+
+.accountText {
+  color: #667085;
+  font-size: var(--size-sm);
+  font-weight: 400;
+  text-align: center;
+}
+
+.linkText {
+  color: #3949ab;
+  font-size: var(--size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    width: 100%;
+  }
+}

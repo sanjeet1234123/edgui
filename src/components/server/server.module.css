@@ -1,0 +1,46 @@
+/* Server Header */
+
+.Description {
+  font-size: var(--size-base);
+  font-weight: 400;
+  color: var(--clr-server-details-description);
+  word-break: keep-all;
+}
+
+.Created {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: var(--clr-server-details-created);
+}
+
+/* Server Tools */
+
+.error {
+  font-weight: 500;
+  font-size: var(--size-sm);
+  color: var(--mantine-color-error);
+}
+
+.accordionItem {
+  border: 1px solid var(--clr-server-details-accordion-br);
+}
+
+/* Server Content */
+
+.markdownCard {
+  padding: var(--mantine-spacing-sm);
+}
+
+.markdownCard[data-theme='dark'] {
+  background-color: var(--mantine-color-dark-8);
+}
+
+.markdownCard[data-theme='light'] {
+  background-color: var(--mantine-color-white);
+}
+
+/* Server Body */
+
+.segmentedControl {
+  background-color: var(--clr-server-details-segmentedControl);
+}

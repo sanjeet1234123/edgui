@@ -1,0 +1,53 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mantine-spacing-xs);
+  padding: var(--mantine-spacing-xl);
+  border-radius: var(--mantine-radius-lg);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--clr-add-new-modal-card-bg);
+  }
+  &:hover .cardTitle {
+    color: var(--clr-add-new-modal-card-hover);
+  }
+  &:hover .icon {
+    color: var(--clr-add-new-modal-card-icon);
+  }
+}
+
+.cardTitle {
+  font-size: var(--size-2xl);
+  font-weight: 600;
+  color: var(--clr-black);
+}
+
+.cardDescription {
+  text-align: center;
+  font-size: var(--size-sm);
+  color: var(--clr-add-new-modal-card-description);
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: var(--mantine-spacing-md);
+  }
+
+  .cardTitle {
+    font-size: var(--size-xl);
+  }
+
+  .cardDescription {
+    font-size: var(--size-xs);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}

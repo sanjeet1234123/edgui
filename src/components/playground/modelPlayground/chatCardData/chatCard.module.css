@@ -1,0 +1,49 @@
+/* ChatCardBody */
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.message {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.userMessage {
+  justify-content: flex-end;
+}
+
+.messageBubble {
+  max-width: 70%;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: var(--size-base);
+  font-weight: 400;
+}
+
+.userMessageBubble {
+  background-color: #0569ec;
+  color: white;
+}
+
+.botMessageBubble {
+  background-color: var(--mantine-color-gray-1);
+  color: black;
+}
+
+/* ChatCardInput */
+
+.searchInput {
+  font-size: var(--size-base);
+  &::placeholder {
+    color: #666f8d;
+  }
+}

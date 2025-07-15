@@ -1,0 +1,184 @@
+/* Platform Setup Header */
+
+.title {
+  color: var(--clr-black);
+  font-weight: 600;
+  font-size: var(--size-4xl);
+}
+
+.text {
+  color: #414143;
+  font-weight: 400;
+  font-size: var(--size-base);
+}
+
+/* Platform Setup Stepper */
+
+.step {
+  display: flex;
+  align-items: flex-start;
+}
+
+.stepBody {
+  gap: 8px;
+}
+
+.stepLabel {
+  font-size: var(--size-base);
+  font-weight: 500;
+  color: #333333;
+}
+
+.stepDescription {
+  font-size: var(--size-sm);
+  color: #888888;
+}
+
+.content {
+  margin-top: 42px;
+}
+
+.stepCompletedIcon {
+  color: var(--mantine-color-white);
+}
+
+/* Team Details */
+
+.label {
+  font-size: var(--size-base);
+  font-weight: 500;
+  color: var(--mantine-color-black);
+  margin-bottom: 8px;
+}
+
+.wrapper {
+  border-radius: 8px;
+  width: 50%;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #465ff166;
+}
+
+.input,
+.innerInput {
+  font-size: var(--size-base);
+  font-weight: 400;
+  &::placeholder {
+    color: #667085;
+  }
+}
+
+.root:focus-within .input {
+  border-color: #283ab6;
+}
+
+.required,
+.error {
+  font-size: var(--size-sm);
+  color: var(--mantine-color-error);
+}
+
+.teamSizeContainer {
+  margin-top: 8px;
+}
+
+.teamSizeOptionsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 50%;
+}
+
+.teamSizeOption {
+  font-size: var(--size-base);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  color: #344054;
+  min-width: 110px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
+  font-weight: 400;
+  user-select: none;
+}
+
+.teamSizeOptionSelected {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #283ab6;
+}
+
+/* Workspace Creation */
+
+.exampleUrlBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #283ab6;
+  border-radius: 8px;
+  padding: 0 24px;
+  width: fit-content;
+  height: 50px;
+  overflow: hidden;
+}
+
+.exampleUrl {
+  font-size: var(--size-base);
+  color: #283ab6;
+  font-weight: 400;
+}
+
+.errorText {
+  color: var(--mantine-color-error);
+  font-size: var(--size-sm);
+  font-weight: 400;
+}
+
+.successText {
+  color: var(--mantine-color-green-7);
+  font-size: var(--size-sm);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .teamSizeOptionsWrapper {
+    max-width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--size-3xl);
+  }
+
+  .text {
+    font-size: var(--size-sm);
+  }
+
+  .label {
+    font-size: var(--size-sm);
+  }
+
+  .teamSizeOption {
+    font-size: var(--size-sm);
+    min-width: 85px;
+    height: 40px;
+  }
+
+  .exampleUrlBox {
+    height: 40px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+/* Server Details */
+
+.Title {
+  font-size: var(--size-3xl);
+  font-weight: 600;
+  color: var(--clr-black);
+}
+
+.Description {
+  font-size: var(--size-base);
+  font-weight: 400;
+  color: var(--clr-server-description);
+  word-break: keep-all;
+}
+
+.Created {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: var(--clr-server-created-at);
+}
+
+/* Connect Servers */
+
+.Heading {
+  font-size: var(--size-2xl);
+  font-weight: 600;
+  color: var(--clr-black);
+}

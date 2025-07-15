@@ -1,0 +1,105 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+}
+
+.forgotWorkspace,
+.forgotPassword {
+  font-size: var(--size-sm);
+  color: var(--clr-auth-container-forgot-label);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.checkboxLabel {
+  font-size: var(--size-sm);
+  color: var(--clr-auth-container-checkbox-label);
+}
+
+.exampleUrl {
+  font-size: var(--size-base);
+  color: var(--clr-auth-container-example-url);
+  font-weight: 400;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-auth-container-example-url-bg);
+  border: 1px solid var(--clr-auth-container-example-url-border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+
+.accountText {
+  color: var(--clr-auth-container-account-text);
+  font-size: var(--size-sm);
+  font-weight: 400;
+  text-align: center;
+}
+
+.linkText {
+  color: var(--clr-auth-container-link-text);
+  font-size: var(--size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 1440px) {
+  .workspaceGroup {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .exampleUrl {
+    min-width: 100%;
+  }
+
+  .workspaceInput {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workspaceGroup {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+
+  .exampleUrl {
+    min-width: 200px;
+  }
+
+  .workspaceInput {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .form {
+    width: 100%;
+  }
+
+  .workspaceGroup {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .exampleUrl {
+    min-width: 100%;
+  }
+
+  .workspaceInput {
+    width: 100%;
+  }
+}

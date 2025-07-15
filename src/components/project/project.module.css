@@ -1,0 +1,180 @@
+/* Project Header */
+
+.actionIcon {
+  border: 1px solid #e4e4e7;
+  border-radius: var(--mantine-radius-md);
+}
+
+.popoverText {
+  font-size: var(--mantine-font-size-md);
+  font-weight: 500;
+  color: var(--mantine-color-black);
+  padding: 6px 16px;
+  border-radius: var(--mantine-radius-md);
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  &:hover {
+    background-color: var(--mantine-color-gray-1);
+  }
+  &:active {
+    transform: scale(0.98);
+    background-color: var(--mantine-color-gray-2);
+  }
+}
+
+/* Project Body */
+
+.segmentedControlLabel {
+  padding: 0.5rem 3rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .segmentedControlLabel {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .segmentedControlRoot {
+    width: 100%;
+  }
+}
+
+/* Project Activity */
+
+.activity {
+  padding: 1rem;
+  border-bottom: 1px solid var(--mantine-color-gray-3);
+}
+
+.activityDescription {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.activityName {
+  font-size: var(--size-lg);
+  font-weight: 500;
+  color: var(--clr-black);
+  text-transform: capitalize;
+}
+
+.activityReason {
+  font-size: var(--size-base);
+  font-weight: 400;
+  color: var(--mantine-color-gray-6);
+}
+
+.activityBadge {
+  text-transform: capitalize;
+  font-size: var(--size-sm);
+  font-weight: 600;
+  color: var(--mantine-color-black);
+  background-color: var(--mantine-color-gray-1);
+  border-color: var(--mantine-color-gray-2);
+}
+
+.activityBadgePass {
+  color: var(--mantine-color-green-8);
+  background-color: var(--mantine-color-green-1);
+}
+
+.activityBadgeFail {
+  color: var(--mantine-color-red-8);
+  background-color: var(--mantine-color-red-1);
+}
+
+.activityBadgePending {
+  color: var(--mantine-color-gray-8);
+  background-color: var(--mantine-color-gray-1);
+}
+
+@media (max-width: 768px) {
+  .activityFilterSelect {
+    width: 180px;
+  }
+}
+
+/* Project Members */
+
+.memberName {
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.membersDescription {
+  font-size: var(--size-sm);
+  font-weight: 400;
+  color: #737478;
+}
+
+.thead {
+  background-color: var(--clr-project-table-header);
+  white-space: nowrap;
+}
+
+.memberBadgeAdmin,
+.memberBadgeEnv {
+  background-color: #f3f4f6;
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+}
+
+.memberBadgeOwner {
+  background-color: var(--clr-primary);
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+}
+
+.memberBadge {
+  border-color: #e4e4e7;
+  text-transform: capitalize;
+  font-size: var(--size-xs);
+  color:var(--clr-black)
+}
+
+.memberData {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+/* Invite Project Members */
+
+.label {
+  font-size: var(--size-base);
+  font-weight: 600;
+  color: #344054;
+  margin-bottom: 8px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #465ff166;
+}
+
+.wrapper {
+  border-radius: 8px;
+}
+
+.input,
+.innerInput {
+  font-size: var(--size-lg);
+  font-weight: 400;
+  &::placeholder {
+    color: #667085;
+  }
+}
+
+.root:focus-within .input {
+  border-color: #283ab6;
+}
+
+.error {
+  color: var(--mantine-color-red-6);
+  font-size: var(--size-sm);
+  font-weight: 500;
+}

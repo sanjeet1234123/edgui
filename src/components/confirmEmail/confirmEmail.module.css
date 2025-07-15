@@ -1,0 +1,73 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+}
+
+.error {
+  font-size: var(--size-sm);
+  color: var(--clr-notification-error);
+}
+
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--mantine-spacing-lg);
+}
+
+.input {
+  border-color: var(--clr-auth-container-pinInput-border);
+  font-size: var(--size-xl);
+}
+
+.sendCodeButton {
+  padding: 2px;
+  color: var(--clr-auth-container-link-text);
+  font-size: var(--size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.verificationCodeText {
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: var(--clr-auth-container-pinInput-verification-code);
+}
+
+.subText {
+  color: var(--clr-auth-container-account-text);
+  font-size: var(--size-base);
+  font-weight: 400;
+}
+
+.subText strong {
+  color: var(--clr-auth-container-account-text-strong);
+}
+
+.sendCodeText {
+  color: var(--clr-auth-container-account-text);
+  font-size: var(--size-sm);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .form {
+    width: 100%;
+  }
+
+  .input {
+    font-size: var(--size-lg);
+  }
+}
+
+@media (max-width: 425px) {
+  .root {
+    gap: var(--mantine-spacing-sm);
+  }
+}

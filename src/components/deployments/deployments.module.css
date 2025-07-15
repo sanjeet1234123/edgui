@@ -1,0 +1,25 @@
+/* Deployments Card */
+
+.modelIcon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.modelCardTh {
+  color: var(--mantine-color-gray-7);
+  font-size: var(--size-base);
+  font-weight: 400;
+}
+
+.modelCardTd {
+  color: var(--mantine-color-black);
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.popoverButton {
+  &:hover {
+    background-color: var(--mantine-color-gray-0);
+  }
+}
