@@ -7,6 +7,7 @@ import type { Model, UpscaleModelResponse } from '@/types/marketplaceType'
 import { useUpscaleModelMutation } from '@/hooks/mutations/useMarketplaceMutations'
 import { PATHS } from '@/constants/paths'
 import { useModelStore } from '@/store/modelStore'
+import { modelSchemas } from '@/components/playground/modelPlayground/modelSchemas'
 
 type ModelSectionProps = {
   title?: string
@@ -24,7 +25,7 @@ function ModelSection({
 }: ModelSectionProps) {
   const navigate = useNavigate()
 
-  const { setCurrentModel, setIngressUrl, searchedModel } = useModelStore()
+  const { setCurrentModel, setIngressUrl, setModelSchema, searchedModel } = useModelStore()
 
   const [showAll, setShowAll] = useState(false)
   const displayedModels = showAll ? models : models.slice(0, initialCount)
@@ -44,22 +45,16 @@ function ModelSection({
   const handleCardClick = (model: Model) => {
     if (!user) {
       setCurrentModel(model)
-      upscaleModel(
-        {
-          deployment_name: model.deployment_name,
+      // Hardcoded: get schema and ingress from modelSchemas
+      const schema = modelSchemas[model.model_name]
+      setModelSchema(schema)
+      setIngressUrl(schema?.ingress || '')
+      navigate({
+        to: PATHS.PLAYGROUND,
+        search: {
+          model: model.model_name,
         },
-        {
-          onSuccess: (data: UpscaleModelResponse) => {
-            setIngressUrl(data.ingress_url)
-            navigate({
-              to: PATHS.PLAYGROUND,
-              search: {
-                model: model.model_name,
-              },
-            })
-          },
-        },
-      )
+      })
     }
   }
 

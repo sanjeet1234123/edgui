@@ -20,6 +20,8 @@ type ModelStore = {
   setIngressUrl: (ingressUrl: string) => void
   setFilters: (filters: Filter) => void
   setViewMode: (viewMode: string) => void // Remove the optional modifier
+  modelSchema: any | null
+  setModelSchema: (schema: any) => void
 }
 
 export const useModelStore = create<ModelStore>()(
@@ -31,6 +33,8 @@ export const useModelStore = create<ModelStore>()(
       searchedModel: null,
       filters: null,
       viewMode: 'grid', // Default view mode
+      modelSchema: null,
+      setModelSchema: (schema: any) => set({ modelSchema: schema }),
       setViewMode: (viewMode: string) => set({ viewMode }),
       setSearchModel: (modelName: string) => set({ searchedModel: modelName }),
       setCurrentModel: (model: Model) => set({ currentModel: model }),
